@@ -1,0 +1,225 @@
+def blackjack():
+    import random
+    Drand = random.randrange(1,12)
+    Drand1 = random.randrange(1,12)
+    Prand = random.randrange(1,12)
+    Prand1 = random.randrange(1,12)
+    Drands = Drand + Drand1
+    Prands = Prand + Prand1
+    rand = random.randrange(1,12)
+    rand1 = random.randrange(1,12)
+    rand2 = random.randrange(1,12)
+    rand3 = random.randrange(1,12)
+    rand4 = random.randrange(1,12)
+    rand5 = random.randrange(1,12)
+    rand6 = random.randrange(1,12)
+    rand7 = random.randrange(1,12)
+    rand8 = random.randrange(1,12)
+    rand9 = random.randrange(1,12)
+    rand10 = random.randrange(1,12)
+    bust = 0
+    hand = Prands
+    rd = 0
+    if Drands >= 22:
+        busted = "busted"
+    elif Drands <= 16:
+        Drands += rand5
+        if Drands <= 16:
+            Drands += rand6
+            if Drands <= 16:
+                Drands += rand7
+                if Drands <= 16:
+                    Drands += rand8
+                    if Drands <= 16:
+                        Drands += rand9
+    busted = Drands               
+    if Drands >= 22:
+        busted = "busted"
+        
+    def Rando():
+        for i in range(1):
+            return random.randrange(1,12)
+    while True:
+        print("The Dealer deals you a {} and a {}".format(Prand, Prand1)) 
+        print("the Dealer has one card hidden, but the other is a {}.".format(Drand)) #add all of the together(ran + Prand + rand1)
+        print("")
+        h1t = input("would you like to hit?(yes for hit, no for stand): ")
+        rd += 1
+        if h1t == ("yes" or "Yes") and (Prands + rand) >= 22:
+            print("you got {} and busted with {}!".format(rand, Prands + rand ))
+            hand = Prands + rand
+            bust = 1
+            break
+        elif h1t == ("yes" or "Yes") and (Prands + rand) == 21:
+            print("Congrats! you won with a solid 21!")
+            hand = Prands + rand
+            break
+        else:
+            if h1t == ("yes" or "Yes"):
+                print("you got {}, and your total is {}".format(rand, Prands + rand))
+                print("")
+                hand = Prands + rand
+            elif h1t == ("no" or "No"):
+                hand == Prands
+                st1 = input("you would like to stand at {}? ".format(Prands))
+                if st1 == ("no" or "No"):
+                    hand = Prands
+                    print("")
+                    continue
+                elif st1 == ("yes" or "Yes"):
+                    print("you stood at {} while the dealer stood at {}".format(Prands, Drands))
+                    break
+                
+
+        h2t = input("would you like another hit? ")
+        rd += 1
+        global st2
+        if h2t == ("yes" or "Yes") and (Prands + rand + rand1) >= 22:
+            print("you got {} and busted with {}! Try again!".format(rand1, Prands + rand + rand1))
+            hand = Prands + rand + rand1
+            bust = 1
+            break
+        elif h2t == ("yes" or "Yes") and (Prands + rand + rand1) == 21:
+            print("Congrats! you won with a solid 21!")
+            hand = Prands + rand + rand1
+            break
+        else:
+            print("")
+            if h2t == ("yes" or "Yes"):
+                print("you got {}, and your total is {}".format(rand1, Prands + rand + rand1))
+                print("")
+                hand = Prands + rand + rand1
+            elif h2t == ("no" or "No"):
+                st2 = input("you would like to stand at {}? ".format(Prands + rand))
+                if st2 == ("no" or "No"):
+                    print("")
+                elif st2 == ("yes" or "Yes"):
+                    print("you stood at {} while the dealer stood at {}".format(Prands + rand, Drands))
+                    break
+                
+                    
+        h3t = input("would you like another hit? ")
+        rd += 1
+        global st3
+        if h3t == ("yes" or "Yes") and (Prands + rand + rand1 + rand2) >= 22:
+            print("you got {} and busted with {}!".format(rand2, Prands + rand + rand1 + rand2))
+            hand = Prands + rand + rand1 + rand2
+            bust = 1
+            break
+        elif h3t == ("yes" or "Yes") and (Prands + rand + rand1 + rand2) == 21:
+            print("Congrats! you won with a solid 21!")
+            hand = Prands + rand + rand1 + rand2
+            break
+        else:
+            print("")
+            if h3t == ("yes" or "Yes"):
+                print("you got {}, and your total is {}".format(rand2, Prands + rand + rand1 + rand2))
+                print("")
+                hand = Prands + rand + rand1 + rand2
+            elif h3t == ("no" or "No"):
+                global st3
+                st3 = input("you would like to stand at {}? ".format(Prands + rand + rand1))
+                if st3 == ("no" or "No"):
+                    print("")
+                    continue
+                elif st3 == ("yes" or "Yes"):
+                    print("you stood at {} while the dealer stood at {}".format(Prands + rand + rand1, Drands))
+                    break
+                
+                
+        h4t = input("would you like yet another hit? ")
+        rd += 1
+        global st4
+        if h4t == ("yes" or "Yes") and (Prands + rand + rand1 + rand2 + rand3) >= 22:
+            print("you got {} and busted with {}!".format(rand3, Prands + rand + rand1 + rand2 + rand3))
+            hand = Prands + rand + rand1 + rand2 + rand3
+            bust = 1
+            break
+        elif h4t == ("yes" or "Yes") and (Prands + rand + rand1 + rand2) == 21:
+            print("Congrats! you won with a solid 21!")
+            hand = Prands + rand + rand1 + rand2 + rand3
+            break
+        else:
+            print("")
+            if h4t == ("yes" or "Yes"):
+                print("you got {}, and your total is {}".format(rand3, Prands + rand + rand1 + rand2 + rand3))
+                print("")
+                hand = Prands + rand + rand1 + rand2 + rand3
+            elif h4t == ("no" or "No"):
+                global st4
+                st4 = input("you would like to stand at {}? ".format(Prands + rand + rand1 + rand2))
+                if st4 == ("no" or "No"):
+                    print("")
+                    continue
+                elif st4 == ("yes" or "Yes"):
+                    print("you stood at {} while the dealer stood at {}".format(Prands + rand + rand1 + rand2, Drands))
+                    break
+                
+                
+        h5t = input("would you like yet another hit? ")
+        rd += 1
+        global st5
+        if h5t == ("yes" or "Yes") and (Prands + rand + rand1 + rand2 + rand3 + rand4) >= 22:
+            print("you got {} and busted with {}!".format(rand4, Prands + rand + rand1 + rand2 + rand3 + rand4))
+            hand = Prands + rand + rand1 + rand2 + rand3 + rand4
+            bust = 1
+            break
+        elif h5t == ("yes" or "Yes") and (Prands + rand + rand1 + rand2 + rand4) == 21:
+            print("Congrats! you won with a solid 21!")
+            hand = Prands + rand + rand1 + rand2 + rand3 + rand4
+            break
+        else:
+            print("")
+            if h5t == ("yes" or "Yes"):
+                print("you got {}, and your total is {}".format(rand4, Prands + rand + rand1 + rand2 + rand3 + rand4))
+                hand = Prands + rand + rand1 + rand2 + rand3 + rand4
+            elif h5t == ("no" or "No"):
+                global st5
+                st5 = input("you would like to stand at {}? ".format(Prands + rand + rand1 + rand2 + rand3))
+                if st5 == ("no" or "No"):
+                    print("")
+                    continue
+                elif st5 == ("yes" or "Yes"):
+                    print("you stood at {} while the dealer stood at {}".format(Prands + rand + rand1 + rand2 + rand3 + rand4, Drands))
+                    break
+                
+    print("")
+    print("Summary:")
+    print("")
+
+    LoBu = "lost"
+    if hand >= 22:
+        LoBu = "busted"
+        
+    if rd == 5:
+        print("You hit 5 times while staying under 21! you automatically win!")
+    elif (Drands >= 22) and (hand >= 22):
+        print("You and the dealer both busted! you had {} and The Dealer had {}! Try again?".format(hand, Drands))
+    elif Drands >= 22 and hand <= 21:
+        print("You won with {}, while the dealer busted at {}!".format(hand, Drands))
+    elif (hand > Drands) and (hand <= 21) and (Drands != (21,22,23,24,25,26,27)):
+        print("You won with {}, while the dealer had {}!".format(hand, busted)) # make a variable that displays the dealers hand if he busted as "busted" or the number if he didnt
+    elif hand < Drands and Drands != (22,23,24,25,26,27):
+        print("You {} with {}, while the dealer had {}!".format(LoBu, hand, busted))
+    elif hand == Drands:
+        print("You tied with the dealer, you both had {}!".format(busted))
+    elif rd == 5:
+        print("You hit 5 times and got under 21! you win!")
+    elif hand >= 22 and (Drands != (21,22,23,24,25,26,27)):
+        print("You Busted at {} while The Dealer had {}! Try again?".format(hand, Drands))
+    print("")
+    print("")
+    global again
+    again = input("would you like to play again? ")
+        
+print("Blackjack is a game which you try and get closest or exactly 21.")
+print("If you go over, the dealer wins, and vice versa.")
+print("If any of you make it to 5 hits, you win automatically!")
+print("")
+    
+again = input("would you like to play? ")
+print("")
+while again == 'yes' or 'Yes':
+    print("")
+    blackjack()
+    print("")
